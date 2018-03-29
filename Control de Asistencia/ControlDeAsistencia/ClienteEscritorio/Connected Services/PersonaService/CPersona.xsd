@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Entidad.Comun" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Entidad.Comun" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50897/Comun/CPersona.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Entidad.Asistencia" />
+  <xs:import schemaLocation="http://localhost:50897/Comun/CPersona.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:50897/Comun/CPersona.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Entidad.Enumeradores" />
+  <xs:complexType name="EPersona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acutalizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Apellidos" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Entidad.Asistencia" minOccurs="0" name="Asistencia" nillable="true" type="q1:ArrayOfEAsistencia" />
+      <xs:element minOccurs="0" name="CargoPersona" nillable="true" type="tns:ArrayOfECargoPersona" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entidad.Asistencia" minOccurs="0" name="ControlPersonal" nillable="true" type="q2:ArrayOfEControlPersonal" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="tns:ArrayOfECorreo" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="tns:ArrayOfEDireccion" />
+      <xs:element minOccurs="0" name="Habilitado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Entidad.Asistencia" minOccurs="0" name="Justificacion" nillable="true" type="q3:ArrayOfEJustificacion" />
+      <xs:element minOccurs="0" name="Nacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreGenerado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NroDocumento" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Entidad.Asistencia" minOccurs="0" name="Permiso" nillable="true" type="q4:ArrayOfEPermiso" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Entidad.Asistencia" minOccurs="0" name="Sanciones" nillable="true" type="q5:ArrayOfESanciones" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="tns:ArrayOfETelefono" />
+      <xs:element minOccurs="0" name="TipoDocumento" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoSexo" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Entidad.Asistencia" minOccurs="0" name="Vacaciones" nillable="true" type="q6:ArrayOfEVacaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EPersona" nillable="true" type="tns:EPersona" />
+  <xs:complexType name="ArrayOfECargoPersona">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECargoPersona" nillable="true" type="tns:ECargoPersona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfECargoPersona" nillable="true" type="tns:ArrayOfECargoPersona" />
+  <xs:complexType name="ECargoPersona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actualizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Cargo" nillable="true" type="tns:ECargo" />
+      <xs:element minOccurs="0" name="CargoId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="tns:EDepartamento" />
+      <xs:element minOccurs="0" name="DepartamentoId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Entidad.Asistencia" minOccurs="0" name="Jornada" nillable="true" type="q7:EJornada" />
+      <xs:element minOccurs="0" name="JornadaId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Persona" nillable="true" type="tns:EPersona" />
+      <xs:element minOccurs="0" name="PersonaId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECargoPersona" nillable="true" type="tns:ECargoPersona" />
+  <xs:complexType name="ECargo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actualizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CargoPersona" nillable="true" type="tns:ArrayOfECargoPersona" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Habilitado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECargo" nillable="true" type="tns:ECargo" />
+  <xs:complexType name="EDepartamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actualizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CargoPersona" nillable="true" type="tns:ArrayOfECargoPersona" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EDepartamento" nillable="true" type="tns:EDepartamento" />
+  <xs:complexType name="ArrayOfECorreo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECorreo" nillable="true" type="tns:ECorreo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfECorreo" nillable="true" type="tns:ArrayOfECorreo" />
+  <xs:complexType name="ECorreo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actualizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CorreoElectronico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Habilitado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Persona" nillable="true" type="tns:EPersona" />
+      <xs:element minOccurs="0" name="PersonaId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECorreo" nillable="true" type="tns:ECorreo" />
+  <xs:complexType name="ArrayOfEDireccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EDireccion" nillable="true" type="tns:EDireccion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEDireccion" nillable="true" type="tns:ArrayOfEDireccion" />
+  <xs:complexType name="EDireccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actualizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Habilitado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="NombreVia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Persona" nillable="true" type="tns:EPersona" />
+      <xs:element minOccurs="0" name="PersonaId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Referencia" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Entidad.Enumeradores" minOccurs="0" name="TipoDireccion" type="q8:DireccionTipo" />
+      <xs:element minOccurs="0" name="Ubigeo" nillable="true" type="tns:EUbigeo" />
+      <xs:element minOccurs="0" name="UbigeoId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Urbanizacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EDireccion" nillable="true" type="tns:EDireccion" />
+  <xs:complexType name="EUbigeo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actualizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="tns:ArrayOfEDireccion" />
+      <xs:element minOccurs="0" name="Distrito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Habilitado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EUbigeo" nillable="true" type="tns:EUbigeo" />
+  <xs:complexType name="ArrayOfETelefono">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ETelefono" nillable="true" type="tns:ETelefono" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfETelefono" nillable="true" type="tns:ArrayOfETelefono" />
+  <xs:complexType name="ETelefono">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actualizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Habilitado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="NroTelefono" type="xs:int" />
+      <xs:element minOccurs="0" name="Observacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Persona" nillable="true" type="tns:EPersona" />
+      <xs:element minOccurs="0" name="PersonaId" type="ser:guid" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Entidad.Enumeradores" minOccurs="0" name="TipoTelefono" type="q9:TelefonoTipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ETelefono" nillable="true" type="tns:ETelefono" />
+</xs:schema>

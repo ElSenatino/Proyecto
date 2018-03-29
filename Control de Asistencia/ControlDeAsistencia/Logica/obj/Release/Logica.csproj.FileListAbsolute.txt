@@ -1,0 +1,30 @@
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Logica.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Logica.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Controlador.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Entidad.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\EntityFramework.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Controlador.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Controlador.dll.config
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Entidad.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\EntityFramework.xml
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Release\Logica.csprojResolveAssemblyReference.cache
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Release\Logica.csproj.CoreCompileInputs.cache
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Release\Logica.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Release\Logica.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Logica.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Logica.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Controlador.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Entidad.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\EntityFramework.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Controlador.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Controlador.dll.config
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Entidad.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\EntityFramework.xml
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Release\Logica.csprojResolveAssemblyReference.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Release\Logica.csproj.CoreCompileInputs.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Release\Logica.csproj.CopyComplete
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Release\Logica.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Release\Logica.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\Logica.dll.config
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\EntityFramework.SqlServer.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Release\EntityFramework.SqlServer.xml

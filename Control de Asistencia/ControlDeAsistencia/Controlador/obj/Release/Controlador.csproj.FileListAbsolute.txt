@@ -1,0 +1,31 @@
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\Controlador.dll.config
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\Controlador.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\Controlador.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\Entidad.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\EntityFramework.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\EntityFramework.SqlServer.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\Entidad.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\EntityFramework.xml
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\EntityFramework.SqlServer.xml
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.csprojResolveAssemblyReference.cache
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.Migrations.actualizar.resources
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.csproj.GenerateResource.Cache
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.csproj.CoreCompileInputs.cache
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\Controlador.dll.config
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\Controlador.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\Controlador.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\Entidad.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\EntityFramework.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\EntityFramework.SqlServer.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\Entidad.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\EntityFramework.xml
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\bin\Release\EntityFramework.SqlServer.xml
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.csprojResolveAssemblyReference.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.Migrations.actualizar.resources
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.csproj.GenerateResource.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.csproj.CoreCompileInputs.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.csproj.CopyComplete
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Controlador\obj\Release\Controlador.pdb

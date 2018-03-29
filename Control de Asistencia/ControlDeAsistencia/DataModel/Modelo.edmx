@@ -1,0 +1,1967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Asistencias">
+          <Key>
+            <PropertyRef Name="AsistenciaId" />
+          </Key>
+          <Property Name="AsistenciaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Mes" Type="datetime" Nullable="false" />
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Ingreso" Type="datetime" Nullable="false" />
+          <Property Name="InicioAlmuerzo" Type="datetime" Nullable="false" />
+          <Property Name="FinalAlmuerzo" Type="datetime" Nullable="false" />
+          <Property Name="Salida" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ControlPersonal">
+          <Key>
+            <PropertyRef Name="ControlPersonaId" />
+          </Key>
+          <Property Name="ControlPersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Desde" Type="datetime" Nullable="false" />
+          <Property Name="Hasta" Type="datetime" Nullable="false" />
+          <Property Name="DiasAsistidos" Type="int" Nullable="false" />
+          <Property Name="DiasFaltados" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Jornadas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TipoJornada" Type="int" Nullable="false" />
+          <Property Name="Ingreso" Type="datetime" Nullable="false" />
+          <Property Name="Salida" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Justificaciones">
+          <Key>
+            <PropertyRef Name="JustificacionId" />
+          </Key>
+          <Property Name="JustificacionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Detalle" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Permisos">
+          <Key>
+            <PropertyRef Name="PermisoId" />
+          </Key>
+          <Property Name="PermisoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Detalle" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sanciones">
+          <Key>
+            <PropertyRef Name="SancionId" />
+          </Key>
+          <Property Name="SancionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vacaciones">
+          <Key>
+            <PropertyRef Name="PersonaId" />
+          </Key>
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonaId1" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Inicio" Type="datetime" Nullable="false" />
+          <Property Name="Final" Type="datetime" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CargoPersonas">
+          <Key>
+            <PropertyRef Name="CargoPersonaId" />
+          </Key>
+          <Property Name="CargoPersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CargoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DepartamentoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="JornadaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cargos">
+          <Key>
+            <PropertyRef Name="CargoId" />
+          </Key>
+          <Property Name="CargoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Correos">
+          <Key>
+            <PropertyRef Name="CorreoId" />
+          </Key>
+          <Property Name="CorreoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CorreoElectronico" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="DepartamentoId" />
+          </Key>
+          <Property Name="DepartamentoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Direcciones">
+          <Key>
+            <PropertyRef Name="DireccionId" />
+          </Key>
+          <Property Name="DireccionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TipoDireccion" Type="int" Nullable="false" />
+          <Property Name="NombreVia" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Numero" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Urbanizacion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Referencia" Type="varchar" MaxLength="100" />
+          <Property Name="UbigeoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personas">
+          <Key>
+            <PropertyRef Name="PersonaId" />
+          </Key>
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreGenerado" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Apellidos" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TipoDocumento" Type="int" Nullable="false" />
+          <Property Name="NroDocumento" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="TipoSexo" Type="int" Nullable="false" />
+          <Property Name="Nacimiento" Type="datetime" Nullable="false" />
+          <Property Name="Imagen" Type="image" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Telefonos">
+          <Key>
+            <PropertyRef Name="TelefonoId" />
+          </Key>
+          <Property Name="TelefonoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TipoTelefono" Type="int" Nullable="false" />
+          <Property Name="NroTelefono" Type="int" Nullable="false" />
+          <Property Name="Observacion" Type="varchar" MaxLength="100" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ubigeos">
+          <Key>
+            <PropertyRef Name="UbigeoId" />
+          </Key>
+          <Property Name="UbigeoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Pais" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Departamento" Type="nvarchar(max)" />
+          <Property Name="Provincia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Distrito" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Auditorias">
+          <Key>
+            <PropertyRef Name="AuditoriaId" />
+          </Key>
+          <Property Name="AuditoriaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SesionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Registro" Type="datetime" Nullable="false" />
+          <Property Name="Metodo" Type="varchar" MaxLength="25" />
+          <Property Name="CodigoRegistro" Type="varchar" MaxLength="25" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Entidades">
+          <Key>
+            <PropertyRef Name="EntidadId" />
+          </Key>
+          <Property Name="EntidadId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NombreMostrado" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NombreMostradoPlural" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModuloId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Equipos">
+          <Key>
+            <PropertyRef Name="EquipoId" />
+          </Key>
+          <Property Name="EquipoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DireccionIP" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="NumeroIP" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Modulos">
+          <Key>
+            <PropertyRef Name="ModuloId" />
+          </Key>
+          <Property Name="ModuloId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReporteModulos">
+          <Key>
+            <PropertyRef Name="ReporteModuloId" />
+          </Key>
+          <Property Name="ReporteModuloId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" />
+          <Property Name="ReporteId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModuloId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reportes">
+          <Key>
+            <PropertyRef Name="ReporteId" />
+          </Key>
+          <Property Name="ReporteId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ReportServer" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ruta" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RolId" />
+          </Key>
+          <Property Name="RolId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolUsuarios">
+          <Key>
+            <PropertyRef Name="RolUsuarioId" />
+          </Key>
+          <Property Name="RolUsuarioId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UsuarioId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RolId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sesiones">
+          <Key>
+            <PropertyRef Name="SesionId" />
+          </Key>
+          <Property Name="SesionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UsuarioEquipoId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Inicio" Type="datetime" Nullable="false" />
+          <Property Name="Final" Type="datetime" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="TipoEntrada" Type="int" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuarioEquipo">
+          <Key>
+            <PropertyRef Name="UsuarioEquipo" />
+          </Key>
+          <Property Name="UsuarioEquipo" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UsuarioId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EquipoId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuarioModulos">
+          <Key>
+            <PropertyRef Name="UsuarioModuloId" />
+          </Key>
+          <Property Name="UsuarioModuloId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UsuarioId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModuloId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CambiaContraseña" Type="bit" Nullable="false" />
+          <Property Name="UltimaOperacion" Type="datetime" Nullable="false" />
+          <Property Name="EnLinea" Type="bit" Nullable="false" />
+          <Property Name="Administracion" Type="bit" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Asistencia_Asistencias_Comun_Personas_PersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Asistencias" Type="Self.Asistencias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Asistencias">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ControlPersonal" Type="Self.ControlPersonal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="ControlPersonal">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_Justificaciones_Comun_Personas_PersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Justificaciones" Type="Self.Justificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Justificaciones">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_Permisos_Comun_Personas_PersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Permisos">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_Sanciones_Comun_Personas_PersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sanciones" Type="Self.Sanciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Sanciones">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Vacaciones" Type="Self.Vacaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Vacaciones">
+              <PropertyRef Name="PersonaId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId">
+          <End Role="Jornadas" Type="Self.Jornadas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CargoPersonas" Type="Self.CargoPersonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jornadas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CargoPersonas">
+              <PropertyRef Name="JornadaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_CargoPersonas_Comun_Cargos_CargoId">
+          <End Role="Cargos" Type="Self.Cargos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CargoPersonas" Type="Self.CargoPersonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargos">
+              <PropertyRef Name="CargoId" />
+            </Principal>
+            <Dependent Role="CargoPersonas">
+              <PropertyRef Name="CargoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CargoPersonas" Type="Self.CargoPersonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="DepartamentoId" />
+            </Principal>
+            <Dependent Role="CargoPersonas">
+              <PropertyRef Name="DepartamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_CargoPersonas_Comun_Personas_PersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CargoPersonas" Type="Self.CargoPersonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="CargoPersonas">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_Correos_Comun_Personas_PersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Correos" Type="Self.Correos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Correos">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_Direcciones_Comun_Personas_PersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Direcciones">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId">
+          <End Role="Ubigeos" Type="Self.Ubigeos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ubigeos">
+              <PropertyRef Name="UbigeoId" />
+            </Principal>
+            <Dependent Role="Direcciones">
+              <PropertyRef Name="UbigeoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_Telefonos_Comun_Personas_PersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Telefonos" Type="Self.Telefonos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Telefonos">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId">
+          <End Role="Modulos" Type="Self.Modulos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Entidades" Type="Self.Entidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modulos">
+              <PropertyRef Name="ModuloId" />
+            </Principal>
+            <Dependent Role="Entidades">
+              <PropertyRef Name="ModuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId">
+          <End Role="Modulos" Type="Self.Modulos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReporteModulos" Type="Self.ReporteModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modulos">
+              <PropertyRef Name="ModuloId" />
+            </Principal>
+            <Dependent Role="ReporteModulos">
+              <PropertyRef Name="ModuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId">
+          <End Role="Reportes" Type="Self.Reportes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReporteModulos" Type="Self.ReporteModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reportes">
+              <PropertyRef Name="ReporteId" />
+            </Principal>
+            <Dependent Role="ReporteModulos">
+              <PropertyRef Name="ReporteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RolUsuarios" Type="Self.RolUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RolId" />
+            </Principal>
+            <Dependent Role="RolUsuarios">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RolUsuarios" Type="Self.RolUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="RolUsuarios">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId">
+          <End Role="UsuarioEquipo" Type="Self.UsuarioEquipo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sesiones" Type="Self.Sesiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsuarioEquipo">
+              <PropertyRef Name="UsuarioEquipo" />
+            </Principal>
+            <Dependent Role="Sesiones">
+              <PropertyRef Name="UsuarioEquipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId">
+          <End Role="Equipos" Type="Self.Equipos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsuarioEquipo" Type="Self.UsuarioEquipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipos">
+              <PropertyRef Name="EquipoId" />
+            </Principal>
+            <Dependent Role="UsuarioEquipo">
+              <PropertyRef Name="EquipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsuarioEquipo" Type="Self.UsuarioEquipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="UsuarioEquipo">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId">
+          <End Role="Modulos" Type="Self.Modulos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsuarioModulos" Type="Self.UsuarioModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modulos">
+              <PropertyRef Name="ModuloId" />
+            </Principal>
+            <Dependent Role="UsuarioModulos">
+              <PropertyRef Name="ModuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsuarioModulos" Type="Self.UsuarioModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="UsuarioModulos">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_Usuarios_Comun_Personas_PersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Asistencias" EntityType="Self.Asistencias" Schema="Asistencia" store:Type="Tables" />
+          <EntitySet Name="ControlPersonal" EntityType="Self.ControlPersonal" Schema="Asistencia" store:Type="Tables" />
+          <EntitySet Name="Jornadas" EntityType="Self.Jornadas" Schema="Asistencia" store:Type="Tables" />
+          <EntitySet Name="Justificaciones" EntityType="Self.Justificaciones" Schema="Asistencia" store:Type="Tables" />
+          <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="Asistencia" store:Type="Tables" />
+          <EntitySet Name="Sanciones" EntityType="Self.Sanciones" Schema="Asistencia" store:Type="Tables" />
+          <EntitySet Name="Vacaciones" EntityType="Self.Vacaciones" Schema="Asistencia" store:Type="Tables" />
+          <EntitySet Name="CargoPersonas" EntityType="Self.CargoPersonas" Schema="Comun" store:Type="Tables" />
+          <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="Comun" store:Type="Tables" />
+          <EntitySet Name="Correos" EntityType="Self.Correos" Schema="Comun" store:Type="Tables" />
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="Comun" store:Type="Tables" />
+          <EntitySet Name="Direcciones" EntityType="Self.Direcciones" Schema="Comun" store:Type="Tables" />
+          <EntitySet Name="Personas" EntityType="Self.Personas" Schema="Comun" store:Type="Tables" />
+          <EntitySet Name="Telefonos" EntityType="Self.Telefonos" Schema="Comun" store:Type="Tables" />
+          <EntitySet Name="Ubigeos" EntityType="Self.Ubigeos" Schema="Comun" store:Type="Tables" />
+          <EntitySet Name="Auditorias" EntityType="Self.Auditorias" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="Entidades" EntityType="Self.Entidades" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="Equipos" EntityType="Self.Equipos" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="Modulos" EntityType="Self.Modulos" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="ReporteModulos" EntityType="Self.ReporteModulos" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="Reportes" EntityType="Self.Reportes" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="RolUsuarios" EntityType="Self.RolUsuarios" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="Sesiones" EntityType="Self.Sesiones" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="UsuarioEquipo" EntityType="Self.UsuarioEquipo" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="UsuarioModulos" EntityType="Self.UsuarioModulos" Schema="Seguridad" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="Seguridad" store:Type="Tables" />
+          <AssociationSet Name="FK_Asistencia_Asistencias_Comun_Personas_PersonaId" Association="Self.FK_Asistencia_Asistencias_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Asistencias" EntitySet="Asistencias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId" Association="Self.FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="ControlPersonal" EntitySet="ControlPersonal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_Justificaciones_Comun_Personas_PersonaId" Association="Self.FK_Asistencia_Justificaciones_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Justificaciones" EntitySet="Justificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_Permisos_Comun_Personas_PersonaId" Association="Self.FK_Asistencia_Permisos_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Permisos" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_Sanciones_Comun_Personas_PersonaId" Association="Self.FK_Asistencia_Sanciones_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Sanciones" EntitySet="Sanciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1" Association="Self.FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Vacaciones" EntitySet="Vacaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId" Association="Self.FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId">
+            <End Role="Jornadas" EntitySet="Jornadas" />
+            <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_CargoPersonas_Comun_Cargos_CargoId" Association="Self.FK_Comun_CargoPersonas_Comun_Cargos_CargoId">
+            <End Role="Cargos" EntitySet="Cargos" />
+            <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId" Association="Self.FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_CargoPersonas_Comun_Personas_PersonaId" Association="Self.FK_Comun_CargoPersonas_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_Correos_Comun_Personas_PersonaId" Association="Self.FK_Comun_Correos_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Correos" EntitySet="Correos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_Direcciones_Comun_Personas_PersonaId" Association="Self.FK_Comun_Direcciones_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Direcciones" EntitySet="Direcciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId" Association="Self.FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId">
+            <End Role="Ubigeos" EntitySet="Ubigeos" />
+            <End Role="Direcciones" EntitySet="Direcciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_Telefonos_Comun_Personas_PersonaId" Association="Self.FK_Comun_Telefonos_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Telefonos" EntitySet="Telefonos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId" Association="Self.FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId">
+            <End Role="Modulos" EntitySet="Modulos" />
+            <End Role="Entidades" EntitySet="Entidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId" Association="Self.FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId">
+            <End Role="Modulos" EntitySet="Modulos" />
+            <End Role="ReporteModulos" EntitySet="ReporteModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId" Association="Self.FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId">
+            <End Role="Reportes" EntitySet="Reportes" />
+            <End Role="ReporteModulos" EntitySet="ReporteModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId" Association="Self.FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="RolUsuarios" EntitySet="RolUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId" Association="Self.FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="RolUsuarios" EntitySet="RolUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId" Association="Self.FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId">
+            <End Role="UsuarioEquipo" EntitySet="UsuarioEquipo" />
+            <End Role="Sesiones" EntitySet="Sesiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId" Association="Self.FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId">
+            <End Role="Equipos" EntitySet="Equipos" />
+            <End Role="UsuarioEquipo" EntitySet="UsuarioEquipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId" Association="Self.FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="UsuarioEquipo" EntitySet="UsuarioEquipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId" Association="Self.FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId">
+            <End Role="Modulos" EntitySet="Modulos" />
+            <End Role="UsuarioModulos" EntitySet="UsuarioModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId" Association="Self.FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="UsuarioModulos" EntitySet="UsuarioModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_Usuarios_Comun_Personas_PersonaId" Association="Self.FK_Seguridad_Usuarios_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ControlDeAsistenciaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Asistencias" EntityType="Model.Asistencias" />
+          <EntitySet Name="ControlPersonal" EntityType="Model.ControlPersonal" />
+          <EntitySet Name="Jornadas" EntityType="Model.Jornadas" />
+          <EntitySet Name="Justificaciones" EntityType="Model.Justificaciones" />
+          <EntitySet Name="Permisos" EntityType="Model.Permisos" />
+          <EntitySet Name="Sanciones" EntityType="Model.Sanciones" />
+          <EntitySet Name="Vacaciones" EntityType="Model.Vacaciones" />
+          <EntitySet Name="CargoPersonas" EntityType="Model.CargoPersonas" />
+          <EntitySet Name="Cargos" EntityType="Model.Cargos" />
+          <EntitySet Name="Correos" EntityType="Model.Correos" />
+          <EntitySet Name="Departamentos" EntityType="Model.Departamentos" />
+          <EntitySet Name="Direcciones" EntityType="Model.Direcciones" />
+          <EntitySet Name="Personas" EntityType="Model.Personas" />
+          <EntitySet Name="Telefonos" EntityType="Model.Telefonos" />
+          <EntitySet Name="Ubigeos" EntityType="Model.Ubigeos" />
+          <EntitySet Name="Entidades" EntityType="Model.Entidades" />
+          <EntitySet Name="Equipos" EntityType="Model.Equipos" />
+          <EntitySet Name="Modulos" EntityType="Model.Modulos" />
+          <EntitySet Name="ReporteModulos" EntityType="Model.ReporteModulos" />
+          <EntitySet Name="Reportes" EntityType="Model.Reportes" />
+          <EntitySet Name="Roles" EntityType="Model.Roles" />
+          <EntitySet Name="RolUsuarios" EntityType="Model.RolUsuarios" />
+          <EntitySet Name="Sesiones" EntityType="Model.Sesiones" />
+          <EntitySet Name="UsuarioEquipo" EntityType="Model.UsuarioEquipo" />
+          <EntitySet Name="UsuarioModulos" EntityType="Model.UsuarioModulos" />
+          <EntitySet Name="Usuarios" EntityType="Model.Usuarios" />
+          <AssociationSet Name="FK_Asistencia_Asistencias_Comun_Personas_PersonaId" Association="Model.FK_Asistencia_Asistencias_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Asistencias" EntitySet="Asistencias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId" Association="Model.FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="ControlPersonal" EntitySet="ControlPersonal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId" Association="Model.FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId">
+            <End Role="Jornadas" EntitySet="Jornadas" />
+            <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_Justificaciones_Comun_Personas_PersonaId" Association="Model.FK_Asistencia_Justificaciones_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Justificaciones" EntitySet="Justificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_Permisos_Comun_Personas_PersonaId" Association="Model.FK_Asistencia_Permisos_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Permisos" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_Sanciones_Comun_Personas_PersonaId" Association="Model.FK_Asistencia_Sanciones_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Sanciones" EntitySet="Sanciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1" Association="Model.FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Vacaciones" EntitySet="Vacaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_CargoPersonas_Comun_Cargos_CargoId" Association="Model.FK_Comun_CargoPersonas_Comun_Cargos_CargoId">
+            <End Role="Cargos" EntitySet="Cargos" />
+            <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId" Association="Model.FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_CargoPersonas_Comun_Personas_PersonaId" Association="Model.FK_Comun_CargoPersonas_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_Correos_Comun_Personas_PersonaId" Association="Model.FK_Comun_Correos_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Correos" EntitySet="Correos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_Direcciones_Comun_Personas_PersonaId" Association="Model.FK_Comun_Direcciones_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Direcciones" EntitySet="Direcciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId" Association="Model.FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId">
+            <End Role="Ubigeos" EntitySet="Ubigeos" />
+            <End Role="Direcciones" EntitySet="Direcciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comun_Telefonos_Comun_Personas_PersonaId" Association="Model.FK_Comun_Telefonos_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Telefonos" EntitySet="Telefonos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_Usuarios_Comun_Personas_PersonaId" Association="Model.FK_Seguridad_Usuarios_Comun_Personas_PersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId" Association="Model.FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId">
+            <End Role="Modulos" EntitySet="Modulos" />
+            <End Role="Entidades" EntitySet="Entidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId" Association="Model.FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId">
+            <End Role="Equipos" EntitySet="Equipos" />
+            <End Role="UsuarioEquipo" EntitySet="UsuarioEquipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId" Association="Model.FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId">
+            <End Role="Modulos" EntitySet="Modulos" />
+            <End Role="ReporteModulos" EntitySet="ReporteModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId" Association="Model.FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId">
+            <End Role="Modulos" EntitySet="Modulos" />
+            <End Role="UsuarioModulos" EntitySet="UsuarioModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId" Association="Model.FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId">
+            <End Role="Reportes" EntitySet="Reportes" />
+            <End Role="ReporteModulos" EntitySet="ReporteModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId" Association="Model.FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="RolUsuarios" EntitySet="RolUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId" Association="Model.FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="RolUsuarios" EntitySet="RolUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId" Association="Model.FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId">
+            <End Role="UsuarioEquipo" EntitySet="UsuarioEquipo" />
+            <End Role="Sesiones" EntitySet="Sesiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId" Association="Model.FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="UsuarioEquipo" EntitySet="UsuarioEquipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId" Association="Model.FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="UsuarioModulos" EntitySet="UsuarioModulos" />
+          </AssociationSet>
+          <EntitySet Name="Auditorias" EntityType="Model.Auditorias" />
+        </EntityContainer>
+        <EntityType Name="Asistencias">
+          <Key>
+            <PropertyRef Name="AsistenciaId" />
+          </Key>
+          <Property Name="AsistenciaId" Type="Guid" Nullable="false" />
+          <Property Name="Mes" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="Ingreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InicioAlmuerzo" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FinalAlmuerzo" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Salida" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Asistencia_Asistencias_Comun_Personas_PersonaId" FromRole="Asistencias" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="ControlPersonal">
+          <Key>
+            <PropertyRef Name="ControlPersonaId" />
+          </Key>
+          <Property Name="ControlPersonaId" Type="Guid" Nullable="false" />
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="Desde" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Hasta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DiasAsistidos" Type="Int32" Nullable="false" />
+          <Property Name="DiasFaltados" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId" FromRole="ControlPersonal" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Jornadas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TipoJornada" Type="Int32" Nullable="false" />
+          <Property Name="Ingreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Salida" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="CargoPersonas" Relationship="Model.FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId" FromRole="Jornadas" ToRole="CargoPersonas" />
+        </EntityType>
+        <EntityType Name="Justificaciones">
+          <Key>
+            <PropertyRef Name="JustificacionId" />
+          </Key>
+          <Property Name="JustificacionId" Type="Guid" Nullable="false" />
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="Detalle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Asistencia_Justificaciones_Comun_Personas_PersonaId" FromRole="Justificaciones" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Permisos">
+          <Key>
+            <PropertyRef Name="PermisoId" />
+          </Key>
+          <Property Name="PermisoId" Type="Guid" Nullable="false" />
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Detalle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Asistencia_Permisos_Comun_Personas_PersonaId" FromRole="Permisos" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Sanciones">
+          <Key>
+            <PropertyRef Name="SancionId" />
+          </Key>
+          <Property Name="SancionId" Type="Guid" Nullable="false" />
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Asistencia_Sanciones_Comun_Personas_PersonaId" FromRole="Sanciones" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Vacaciones">
+          <Key>
+            <PropertyRef Name="PersonaId" />
+          </Key>
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="PersonaId1" Type="Guid" Nullable="false" />
+          <Property Name="Inicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Final" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1" FromRole="Vacaciones" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="CargoPersonas">
+          <Key>
+            <PropertyRef Name="CargoPersonaId" />
+          </Key>
+          <Property Name="CargoPersonaId" Type="Guid" Nullable="false" />
+          <Property Name="CargoId" Type="Guid" Nullable="false" />
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="DepartamentoId" Type="Guid" Nullable="false" />
+          <Property Name="JornadaId" Type="Guid" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Jornadas" Relationship="Model.FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId" FromRole="CargoPersonas" ToRole="Jornadas" />
+          <NavigationProperty Name="Cargos" Relationship="Model.FK_Comun_CargoPersonas_Comun_Cargos_CargoId" FromRole="CargoPersonas" ToRole="Cargos" />
+          <NavigationProperty Name="Departamentos" Relationship="Model.FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId" FromRole="CargoPersonas" ToRole="Departamentos" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Comun_CargoPersonas_Comun_Personas_PersonaId" FromRole="CargoPersonas" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Cargos">
+          <Key>
+            <PropertyRef Name="CargoId" />
+          </Key>
+          <Property Name="CargoId" Type="Guid" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="CargoPersonas" Relationship="Model.FK_Comun_CargoPersonas_Comun_Cargos_CargoId" FromRole="Cargos" ToRole="CargoPersonas" />
+        </EntityType>
+        <EntityType Name="Correos">
+          <Key>
+            <PropertyRef Name="CorreoId" />
+          </Key>
+          <Property Name="CorreoId" Type="Guid" Nullable="false" />
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="CorreoElectronico" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Comun_Correos_Comun_Personas_PersonaId" FromRole="Correos" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="DepartamentoId" />
+          </Key>
+          <Property Name="DepartamentoId" Type="Guid" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="CargoPersonas" Relationship="Model.FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId" FromRole="Departamentos" ToRole="CargoPersonas" />
+        </EntityType>
+        <EntityType Name="Direcciones">
+          <Key>
+            <PropertyRef Name="DireccionId" />
+          </Key>
+          <Property Name="DireccionId" Type="Guid" Nullable="false" />
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="TipoDireccion" Type="Int32" Nullable="false" />
+          <Property Name="NombreVia" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Numero" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Urbanizacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Referencia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UbigeoId" Type="Guid" Nullable="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Comun_Direcciones_Comun_Personas_PersonaId" FromRole="Direcciones" ToRole="Personas" />
+          <NavigationProperty Name="Ubigeos" Relationship="Model.FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId" FromRole="Direcciones" ToRole="Ubigeos" />
+        </EntityType>
+        <EntityType Name="Personas">
+          <Key>
+            <PropertyRef Name="PersonaId" />
+          </Key>
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="NombreGenerado" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Apellidos" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TipoDocumento" Type="Int32" Nullable="false" />
+          <Property Name="NroDocumento" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TipoSexo" Type="Int32" Nullable="false" />
+          <Property Name="Nacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Imagen" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Asistencias" Relationship="Model.FK_Asistencia_Asistencias_Comun_Personas_PersonaId" FromRole="Personas" ToRole="Asistencias" />
+          <NavigationProperty Name="ControlPersonal" Relationship="Model.FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId" FromRole="Personas" ToRole="ControlPersonal" />
+          <NavigationProperty Name="Justificaciones" Relationship="Model.FK_Asistencia_Justificaciones_Comun_Personas_PersonaId" FromRole="Personas" ToRole="Justificaciones" />
+          <NavigationProperty Name="Permisos" Relationship="Model.FK_Asistencia_Permisos_Comun_Personas_PersonaId" FromRole="Personas" ToRole="Permisos" />
+          <NavigationProperty Name="Sanciones" Relationship="Model.FK_Asistencia_Sanciones_Comun_Personas_PersonaId" FromRole="Personas" ToRole="Sanciones" />
+          <NavigationProperty Name="Vacaciones" Relationship="Model.FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1" FromRole="Personas" ToRole="Vacaciones" />
+          <NavigationProperty Name="CargoPersonas" Relationship="Model.FK_Comun_CargoPersonas_Comun_Personas_PersonaId" FromRole="Personas" ToRole="CargoPersonas" />
+          <NavigationProperty Name="Correos" Relationship="Model.FK_Comun_Correos_Comun_Personas_PersonaId" FromRole="Personas" ToRole="Correos" />
+          <NavigationProperty Name="Direcciones" Relationship="Model.FK_Comun_Direcciones_Comun_Personas_PersonaId" FromRole="Personas" ToRole="Direcciones" />
+          <NavigationProperty Name="Telefonos" Relationship="Model.FK_Comun_Telefonos_Comun_Personas_PersonaId" FromRole="Personas" ToRole="Telefonos" />
+          <NavigationProperty Name="Usuarios" Relationship="Model.FK_Seguridad_Usuarios_Comun_Personas_PersonaId" FromRole="Personas" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Telefonos">
+          <Key>
+            <PropertyRef Name="TelefonoId" />
+          </Key>
+          <Property Name="TelefonoId" Type="Guid" Nullable="false" />
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="TipoTelefono" Type="Int32" Nullable="false" />
+          <Property Name="NroTelefono" Type="Int32" Nullable="false" />
+          <Property Name="Observacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Comun_Telefonos_Comun_Personas_PersonaId" FromRole="Telefonos" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Ubigeos">
+          <Key>
+            <PropertyRef Name="UbigeoId" />
+          </Key>
+          <Property Name="UbigeoId" Type="Guid" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Pais" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Departamento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Distrito" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Direcciones" Relationship="Model.FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId" FromRole="Ubigeos" ToRole="Direcciones" />
+        </EntityType>
+        <EntityType Name="Entidades">
+          <Key>
+            <PropertyRef Name="EntidadId" />
+          </Key>
+          <Property Name="EntidadId" Type="Guid" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NombreMostrado" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NombreMostradoPlural" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModuloId" Type="Guid" Nullable="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Modulos" Relationship="Model.FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId" FromRole="Entidades" ToRole="Modulos" />
+        </EntityType>
+        <EntityType Name="Equipos">
+          <Key>
+            <PropertyRef Name="EquipoId" />
+          </Key>
+          <Property Name="EquipoId" Type="Guid" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DireccionIP" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroIP" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="UsuarioEquipo" Relationship="Model.FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId" FromRole="Equipos" ToRole="UsuarioEquipo" />
+        </EntityType>
+        <EntityType Name="Modulos">
+          <Key>
+            <PropertyRef Name="ModuloId" />
+          </Key>
+          <Property Name="ModuloId" Type="Guid" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Entidades" Relationship="Model.FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId" FromRole="Modulos" ToRole="Entidades" />
+          <NavigationProperty Name="ReporteModulos" Relationship="Model.FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId" FromRole="Modulos" ToRole="ReporteModulos" />
+          <NavigationProperty Name="UsuarioModulos" Relationship="Model.FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId" FromRole="Modulos" ToRole="UsuarioModulos" />
+        </EntityType>
+        <EntityType Name="ReporteModulos">
+          <Key>
+            <PropertyRef Name="ReporteModuloId" />
+          </Key>
+          <Property Name="ReporteModuloId" Type="Guid" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReporteId" Type="Guid" Nullable="false" />
+          <Property Name="ModuloId" Type="Guid" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Modulos" Relationship="Model.FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId" FromRole="ReporteModulos" ToRole="Modulos" />
+          <NavigationProperty Name="Reportes" Relationship="Model.FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId" FromRole="ReporteModulos" ToRole="Reportes" />
+        </EntityType>
+        <EntityType Name="Reportes">
+          <Key>
+            <PropertyRef Name="ReporteId" />
+          </Key>
+          <Property Name="ReporteId" Type="Guid" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ReportServer" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ruta" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ReporteModulos" Relationship="Model.FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId" FromRole="Reportes" ToRole="ReporteModulos" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RolId" />
+          </Key>
+          <Property Name="RolId" Type="Guid" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="RolUsuarios" Relationship="Model.FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId" FromRole="Roles" ToRole="RolUsuarios" />
+        </EntityType>
+        <EntityType Name="RolUsuarios">
+          <Key>
+            <PropertyRef Name="RolUsuarioId" />
+          </Key>
+          <Property Name="RolUsuarioId" Type="Guid" Nullable="false" />
+          <Property Name="UsuarioId" Type="Guid" Nullable="false" />
+          <Property Name="RolId" Type="Guid" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Roles" Relationship="Model.FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId" FromRole="RolUsuarios" ToRole="Roles" />
+          <NavigationProperty Name="Usuarios" Relationship="Model.FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId" FromRole="RolUsuarios" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Sesiones">
+          <Key>
+            <PropertyRef Name="SesionId" />
+          </Key>
+          <Property Name="SesionId" Type="Guid" Nullable="false" />
+          <Property Name="UsuarioEquipoId" Type="Guid" Nullable="false" />
+          <Property Name="Inicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Final" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="TipoEntrada" Type="Int32" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="UsuarioEquipo" Relationship="Model.FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId" FromRole="Sesiones" ToRole="UsuarioEquipo" />
+        </EntityType>
+        <EntityType Name="UsuarioEquipo">
+          <Key>
+            <PropertyRef Name="UsuarioEquipo1" />
+          </Key>
+          <Property Name="UsuarioEquipo1" Type="Guid" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioId" Type="Guid" Nullable="false" />
+          <Property Name="EquipoId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Equipos" Relationship="Model.FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId" FromRole="UsuarioEquipo" ToRole="Equipos" />
+          <NavigationProperty Name="Sesiones" Relationship="Model.FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId" FromRole="UsuarioEquipo" ToRole="Sesiones" />
+          <NavigationProperty Name="Usuarios" Relationship="Model.FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId" FromRole="UsuarioEquipo" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="UsuarioModulos">
+          <Key>
+            <PropertyRef Name="UsuarioModuloId" />
+          </Key>
+          <Property Name="UsuarioModuloId" Type="Guid" Nullable="false" />
+          <Property Name="UsuarioId" Type="Guid" Nullable="false" />
+          <Property Name="ModuloId" Type="Guid" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Modulos" Relationship="Model.FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId" FromRole="UsuarioModulos" ToRole="Modulos" />
+          <NavigationProperty Name="Usuarios" Relationship="Model.FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId" FromRole="UsuarioModulos" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="Guid" Nullable="false" />
+          <Property Name="PersonaId" Type="Guid" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CambiaContraseña" Type="Boolean" Nullable="false" />
+          <Property Name="UltimaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EnLinea" Type="Boolean" Nullable="false" />
+          <Property Name="Administracion" Type="Boolean" Nullable="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Personas" Relationship="Model.FK_Seguridad_Usuarios_Comun_Personas_PersonaId" FromRole="Usuarios" ToRole="Personas" />
+          <NavigationProperty Name="RolUsuarios" Relationship="Model.FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId" FromRole="Usuarios" ToRole="RolUsuarios" />
+          <NavigationProperty Name="UsuarioEquipo" Relationship="Model.FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId" FromRole="Usuarios" ToRole="UsuarioEquipo" />
+          <NavigationProperty Name="UsuarioModulos" Relationship="Model.FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId" FromRole="Usuarios" ToRole="UsuarioModulos" />
+        </EntityType>
+        <Association Name="FK_Asistencia_Asistencias_Comun_Personas_PersonaId">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Asistencias" Role="Asistencias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Asistencias">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.ControlPersonal" Role="ControlPersonal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="ControlPersonal">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId">
+          <End Type="Model.Jornadas" Role="Jornadas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.CargoPersonas" Role="CargoPersonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jornadas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CargoPersonas">
+              <PropertyRef Name="JornadaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_Justificaciones_Comun_Personas_PersonaId">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Justificaciones" Role="Justificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Justificaciones">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_Permisos_Comun_Personas_PersonaId">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Permisos" Role="Permisos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Permisos">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_Sanciones_Comun_Personas_PersonaId">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Sanciones" Role="Sanciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Sanciones">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Vacaciones" Role="Vacaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Vacaciones">
+              <PropertyRef Name="PersonaId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_CargoPersonas_Comun_Cargos_CargoId">
+          <End Type="Model.Cargos" Role="Cargos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.CargoPersonas" Role="CargoPersonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargos">
+              <PropertyRef Name="CargoId" />
+            </Principal>
+            <Dependent Role="CargoPersonas">
+              <PropertyRef Name="CargoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId">
+          <End Type="Model.Departamentos" Role="Departamentos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.CargoPersonas" Role="CargoPersonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="DepartamentoId" />
+            </Principal>
+            <Dependent Role="CargoPersonas">
+              <PropertyRef Name="DepartamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_CargoPersonas_Comun_Personas_PersonaId">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.CargoPersonas" Role="CargoPersonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="CargoPersonas">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_Correos_Comun_Personas_PersonaId">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Correos" Role="Correos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Correos">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_Direcciones_Comun_Personas_PersonaId">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Direcciones" Role="Direcciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Direcciones">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId">
+          <End Type="Model.Ubigeos" Role="Ubigeos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Direcciones" Role="Direcciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ubigeos">
+              <PropertyRef Name="UbigeoId" />
+            </Principal>
+            <Dependent Role="Direcciones">
+              <PropertyRef Name="UbigeoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comun_Telefonos_Comun_Personas_PersonaId">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Telefonos" Role="Telefonos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Telefonos">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_Usuarios_Comun_Personas_PersonaId">
+          <End Type="Model.Personas" Role="Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="PersonaId" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId">
+          <End Type="Model.Modulos" Role="Modulos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Entidades" Role="Entidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modulos">
+              <PropertyRef Name="ModuloId" />
+            </Principal>
+            <Dependent Role="Entidades">
+              <PropertyRef Name="ModuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId">
+          <End Type="Model.Equipos" Role="Equipos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.UsuarioEquipo" Role="UsuarioEquipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipos">
+              <PropertyRef Name="EquipoId" />
+            </Principal>
+            <Dependent Role="UsuarioEquipo">
+              <PropertyRef Name="EquipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId">
+          <End Type="Model.Modulos" Role="Modulos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.ReporteModulos" Role="ReporteModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modulos">
+              <PropertyRef Name="ModuloId" />
+            </Principal>
+            <Dependent Role="ReporteModulos">
+              <PropertyRef Name="ModuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId">
+          <End Type="Model.Modulos" Role="Modulos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.UsuarioModulos" Role="UsuarioModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modulos">
+              <PropertyRef Name="ModuloId" />
+            </Principal>
+            <Dependent Role="UsuarioModulos">
+              <PropertyRef Name="ModuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId">
+          <End Type="Model.Reportes" Role="Reportes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.ReporteModulos" Role="ReporteModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reportes">
+              <PropertyRef Name="ReporteId" />
+            </Principal>
+            <Dependent Role="ReporteModulos">
+              <PropertyRef Name="ReporteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId">
+          <End Type="Model.Roles" Role="Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.RolUsuarios" Role="RolUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RolId" />
+            </Principal>
+            <Dependent Role="RolUsuarios">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId">
+          <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.RolUsuarios" Role="RolUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="RolUsuarios">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId">
+          <End Type="Model.UsuarioEquipo" Role="UsuarioEquipo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Sesiones" Role="Sesiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsuarioEquipo">
+              <PropertyRef Name="UsuarioEquipo1" />
+            </Principal>
+            <Dependent Role="Sesiones">
+              <PropertyRef Name="UsuarioEquipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId">
+          <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.UsuarioEquipo" Role="UsuarioEquipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="UsuarioEquipo">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId">
+          <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.UsuarioModulos" Role="UsuarioModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="UsuarioModulos">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Auditorias">
+          <Key>
+            <PropertyRef Name="AuditoriaId" />
+          </Key>
+          <Property Name="AuditoriaId" Type="Guid" Nullable="false" />
+          <Property Name="SesionId" Type="Guid" Nullable="false" />
+          <Property Name="Registro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Metodo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoRegistro" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ControlDeAsistenciaEntities">
+          <EntitySetMapping Name="Asistencias">
+            <EntityTypeMapping TypeName="Model.Asistencias">
+              <MappingFragment StoreEntitySet="Asistencias">
+                <ScalarProperty Name="Salida" ColumnName="Salida" />
+                <ScalarProperty Name="FinalAlmuerzo" ColumnName="FinalAlmuerzo" />
+                <ScalarProperty Name="InicioAlmuerzo" ColumnName="InicioAlmuerzo" />
+                <ScalarProperty Name="Ingreso" ColumnName="Ingreso" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="AsistenciaId" ColumnName="AsistenciaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ControlPersonal">
+            <EntityTypeMapping TypeName="Model.ControlPersonal">
+              <MappingFragment StoreEntitySet="ControlPersonal">
+                <ScalarProperty Name="DiasFaltados" ColumnName="DiasFaltados" />
+                <ScalarProperty Name="DiasAsistidos" ColumnName="DiasAsistidos" />
+                <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+                <ScalarProperty Name="Desde" ColumnName="Desde" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="ControlPersonaId" ColumnName="ControlPersonaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jornadas">
+            <EntityTypeMapping TypeName="Model.Jornadas">
+              <MappingFragment StoreEntitySet="Jornadas">
+                <ScalarProperty Name="Salida" ColumnName="Salida" />
+                <ScalarProperty Name="Ingreso" ColumnName="Ingreso" />
+                <ScalarProperty Name="TipoJornada" ColumnName="TipoJornada" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Justificaciones">
+            <EntityTypeMapping TypeName="Model.Justificaciones">
+              <MappingFragment StoreEntitySet="Justificaciones">
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="JustificacionId" ColumnName="JustificacionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permisos">
+            <EntityTypeMapping TypeName="Model.Permisos">
+              <MappingFragment StoreEntitySet="Permisos">
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="PermisoId" ColumnName="PermisoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sanciones">
+            <EntityTypeMapping TypeName="Model.Sanciones">
+              <MappingFragment StoreEntitySet="Sanciones">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="SancionId" ColumnName="SancionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vacaciones">
+            <EntityTypeMapping TypeName="Model.Vacaciones">
+              <MappingFragment StoreEntitySet="Vacaciones">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Final" ColumnName="Final" />
+                <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+                <ScalarProperty Name="PersonaId1" ColumnName="PersonaId1" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CargoPersonas">
+            <EntityTypeMapping TypeName="Model.CargoPersonas">
+              <MappingFragment StoreEntitySet="CargoPersonas">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="JornadaId" ColumnName="JornadaId" />
+                <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="CargoId" ColumnName="CargoId" />
+                <ScalarProperty Name="CargoPersonaId" ColumnName="CargoPersonaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cargos">
+            <EntityTypeMapping TypeName="Model.Cargos">
+              <MappingFragment StoreEntitySet="Cargos">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="CargoId" ColumnName="CargoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Correos">
+            <EntityTypeMapping TypeName="Model.Correos">
+              <MappingFragment StoreEntitySet="Correos">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="CorreoId" ColumnName="CorreoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamentos">
+            <EntityTypeMapping TypeName="Model.Departamentos">
+              <MappingFragment StoreEntitySet="Departamentos">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direcciones">
+            <EntityTypeMapping TypeName="Model.Direcciones">
+              <MappingFragment StoreEntitySet="Direcciones">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="UbigeoId" ColumnName="UbigeoId" />
+                <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+                <ScalarProperty Name="Urbanizacion" ColumnName="Urbanizacion" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="NombreVia" ColumnName="NombreVia" />
+                <ScalarProperty Name="TipoDireccion" ColumnName="TipoDireccion" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personas">
+            <EntityTypeMapping TypeName="Model.Personas">
+              <MappingFragment StoreEntitySet="Personas">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Nacimiento" ColumnName="Nacimiento" />
+                <ScalarProperty Name="TipoSexo" ColumnName="TipoSexo" />
+                <ScalarProperty Name="NroDocumento" ColumnName="NroDocumento" />
+                <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="NombreGenerado" ColumnName="NombreGenerado" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telefonos">
+            <EntityTypeMapping TypeName="Model.Telefonos">
+              <MappingFragment StoreEntitySet="Telefonos">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="NroTelefono" ColumnName="NroTelefono" />
+                <ScalarProperty Name="TipoTelefono" ColumnName="TipoTelefono" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="TelefonoId" ColumnName="TelefonoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ubigeos">
+            <EntityTypeMapping TypeName="Model.Ubigeos">
+              <MappingFragment StoreEntitySet="Ubigeos">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Distrito" ColumnName="Distrito" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UbigeoId" ColumnName="UbigeoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Entidades">
+            <EntityTypeMapping TypeName="Model.Entidades">
+              <MappingFragment StoreEntitySet="Entidades">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="NombreMostradoPlural" ColumnName="NombreMostradoPlural" />
+                <ScalarProperty Name="NombreMostrado" ColumnName="NombreMostrado" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="EntidadId" ColumnName="EntidadId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipos">
+            <EntityTypeMapping TypeName="Model.Equipos">
+              <MappingFragment StoreEntitySet="Equipos">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="NumeroIP" ColumnName="NumeroIP" />
+                <ScalarProperty Name="DireccionIP" ColumnName="DireccionIP" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="EquipoId" ColumnName="EquipoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modulos">
+            <EntityTypeMapping TypeName="Model.Modulos">
+              <MappingFragment StoreEntitySet="Modulos">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReporteModulos">
+            <EntityTypeMapping TypeName="Model.ReporteModulos">
+              <MappingFragment StoreEntitySet="ReporteModulos">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="ReporteId" ColumnName="ReporteId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ReporteModuloId" ColumnName="ReporteModuloId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reportes">
+            <EntityTypeMapping TypeName="Model.Reportes">
+              <MappingFragment StoreEntitySet="Reportes">
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Ruta" ColumnName="Ruta" />
+                <ScalarProperty Name="ReportServer" ColumnName="ReportServer" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="ReporteId" ColumnName="ReporteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Model.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolUsuarios">
+            <EntityTypeMapping TypeName="Model.RolUsuarios">
+              <MappingFragment StoreEntitySet="RolUsuarios">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="RolUsuarioId" ColumnName="RolUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sesiones">
+            <EntityTypeMapping TypeName="Model.Sesiones">
+              <MappingFragment StoreEntitySet="Sesiones">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="TipoEntrada" ColumnName="TipoEntrada" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Final" ColumnName="Final" />
+                <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+                <ScalarProperty Name="UsuarioEquipoId" ColumnName="UsuarioEquipoId" />
+                <ScalarProperty Name="SesionId" ColumnName="SesionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioEquipo">
+            <EntityTypeMapping TypeName="Model.UsuarioEquipo">
+              <MappingFragment StoreEntitySet="UsuarioEquipo">
+                <ScalarProperty Name="EquipoId" ColumnName="EquipoId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioEquipo1" ColumnName="UsuarioEquipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioModulos">
+            <EntityTypeMapping TypeName="Model.UsuarioModulos">
+              <MappingFragment StoreEntitySet="UsuarioModulos">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="UsuarioModuloId" ColumnName="UsuarioModuloId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="Model.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Administracion" ColumnName="Administracion" />
+                <ScalarProperty Name="EnLinea" ColumnName="EnLinea" />
+                <ScalarProperty Name="UltimaOperacion" ColumnName="UltimaOperacion" />
+                <ScalarProperty Name="CambiaContraseña" ColumnName="CambiaContraseña" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Auditorias">
+            <EntityTypeMapping TypeName="Model.Auditorias">
+              <MappingFragment StoreEntitySet="Auditorias">
+                <ScalarProperty Name="Actualizacion" ColumnName="Actualizacion" />
+                <ScalarProperty Name="CodigoRegistro" ColumnName="CodigoRegistro" />
+                <ScalarProperty Name="Metodo" ColumnName="Metodo" />
+                <ScalarProperty Name="Registro" ColumnName="Registro" />
+                <ScalarProperty Name="SesionId" ColumnName="SesionId" />
+                <ScalarProperty Name="AuditoriaId" ColumnName="AuditoriaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

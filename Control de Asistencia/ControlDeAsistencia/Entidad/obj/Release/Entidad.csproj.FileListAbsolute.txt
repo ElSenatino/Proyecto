@@ -1,0 +1,11 @@
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Release\Entidad.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Release\Entidad.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Release\Entidad.csproj.CoreCompileInputs.cache
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Release\Entidad.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Release\Entidad.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Release\Entidad.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Release\Entidad.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Release\Entidad.csprojResolveAssemblyReference.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Release\Entidad.csproj.CoreCompileInputs.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Release\Entidad.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Release\Entidad.pdb

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="88b0ce68-31fa-4ac4-850b-de6d92ce9fe9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50897/Comun/CPersona.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CPersona.xsd" MetadataType="Schema" ID="8c6f66d9-9ca9-4010-b951-851e170c6a40" SourceId="1" SourceUrl="http://localhost:50897/Comun/CPersona.svc?xsd=xsd2" />
+    <MetadataFile FileName="CPersona1.xsd" MetadataType="Schema" ID="4e730094-c091-46aa-b8b4-92431fda5c56" SourceId="1" SourceUrl="http://localhost:50897/Comun/CPersona.svc?xsd=xsd3" />
+    <MetadataFile FileName="CPersona2.xsd" MetadataType="Schema" ID="f3a7a5c3-d884-4db7-85fa-f72871f882c7" SourceId="1" SourceUrl="http://localhost:50897/Comun/CPersona.svc?xsd=xsd0" />
+    <MetadataFile FileName="CPersona3.xsd" MetadataType="Schema" ID="81440651-42bb-4716-91f8-b15cf257664c" SourceId="1" SourceUrl="http://localhost:50897/Comun/CPersona.svc?xsd=xsd1" />
+    <MetadataFile FileName="CPersona.wsdl" MetadataType="Wsdl" ID="d252616d-48e1-4ef0-aab9-9fa179f5cc95" SourceId="1" SourceUrl="http://localhost:50897/Comun/CPersona.svc?wsdl" />
+    <MetadataFile FileName="CPersona.disco" MetadataType="Disco" ID="24dfae7e-7251-4759-b020-9f40dc6f56c8" SourceId="1" SourceUrl="http://localhost:50897/Comun/CPersona.svc?disco" />
+    <MetadataFile FileName="CPersona4.xsd" MetadataType="Schema" ID="f36915a2-392d-4498-a298-3a5c66005e05" SourceId="1" SourceUrl="http://localhost:50897/Comun/CPersona.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

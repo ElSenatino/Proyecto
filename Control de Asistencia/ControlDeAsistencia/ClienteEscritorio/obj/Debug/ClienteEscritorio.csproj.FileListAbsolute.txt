@@ -1,0 +1,15 @@
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\obj\Debug\ClienteEscritorio.csprojResolveAssemblyReference.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\obj\Debug\ClienteEscritorio.Properties.Resources.resources
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\obj\Debug\ClienteEscritorio.Seguridad.frmCrearCuenta.resources
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\obj\Debug\ClienteEscritorio.Seguridad.frmIniciarSesion.resources
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\obj\Debug\ClienteEscritorio.csproj.GenerateResource.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\obj\Debug\ClienteEscritorio.csproj.CoreCompileInputs.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\bin\Debug\ClienteEscritorio.exe.config
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\bin\Debug\ClienteEscritorio.exe
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\bin\Debug\ClienteEscritorio.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\bin\Debug\Entidad.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\bin\Debug\Entidad.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\obj\Debug\ClienteEscritorio.csproj.CopyComplete
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\obj\Debug\ClienteEscritorio.exe
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\obj\Debug\ClienteEscritorio.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\ClienteEscritorio\obj\Debug\ClienteEscritorio.Seguridad.frmRecuperarContraseña.resources

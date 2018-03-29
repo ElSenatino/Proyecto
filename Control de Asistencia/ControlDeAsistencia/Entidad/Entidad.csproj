@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69A81056-ED53-48B9-8CE2-C8B63ACA5EC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entidad</RootNamespace>
+    <AssemblyName>Entidad</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Asistencia\EAsistencia.cs" />
+    <Compile Include="Asistencia\EControlPersonal.cs" />
+    <Compile Include="Asistencia\EJornada.cs" />
+    <Compile Include="Asistencia\EJustificacion.cs" />
+    <Compile Include="Asistencia\EPermiso.cs" />
+    <Compile Include="Asistencia\ESancion.cs" />
+    <Compile Include="Asistencia\EVacaciones.cs" />
+    <Compile Include="Comun\ECargo.cs" />
+    <Compile Include="Comun\ECargoPersona.cs" />
+    <Compile Include="Comun\ECorreo.cs" />
+    <Compile Include="Comun\EDepartamento.cs" />
+    <Compile Include="Comun\EDireccion.cs" />
+    <Compile Include="Comun\EPersona.cs" />
+    <Compile Include="Comun\ETelefono.cs" />
+    <Compile Include="Comun\EUbigeo.cs" />
+    <Compile Include="Encriptacion.cs" />
+    <Compile Include="Enumeradores\DireccionTipo.cs" />
+    <Compile Include="Enumeradores\DocumentoTipo.cs" />
+    <Compile Include="Enumeradores\SexoTipo.cs" />
+    <Compile Include="Enumeradores\TelefonoTipo.cs" />
+    <Compile Include="Enumeradores\TipoEntrada.cs" />
+    <Compile Include="Enumeradores\TipoJornada.cs" />
+    <Compile Include="EnvioCorreo.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\EAuditoria.cs" />
+    <Compile Include="Seguridad\EEntidad.cs" />
+    <Compile Include="Seguridad\EEquipo.cs" />
+    <Compile Include="Seguridad\EModulo.cs" />
+    <Compile Include="Seguridad\EReporte.cs" />
+    <Compile Include="Seguridad\EReporteModulo.cs" />
+    <Compile Include="Seguridad\ERol.cs" />
+    <Compile Include="Seguridad\ERolUsuario.cs" />
+    <Compile Include="Seguridad\ESesion.cs" />
+    <Compile Include="Seguridad\EUsuario.cs" />
+    <Compile Include="Seguridad\EUsuarioEquipo.cs" />
+    <Compile Include="Seguridad\EUsuarioModulo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,12 @@
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\bin\Debug\DataModel.dll.config
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\bin\Debug\DataModel.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\bin\Debug\DataModel.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\bin\Debug\EntityFramework.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\bin\Debug\EntityFramework.SqlServer.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\bin\Debug\EntityFramework.xml
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\bin\Debug\EntityFramework.SqlServer.xml
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\obj\Debug\DataModel.csproj.CoreCompileInputs.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\obj\Debug\DataModel.csproj.CopyComplete
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\obj\Debug\DataModel.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\DataModel\obj\Debug\DataModel.pdb

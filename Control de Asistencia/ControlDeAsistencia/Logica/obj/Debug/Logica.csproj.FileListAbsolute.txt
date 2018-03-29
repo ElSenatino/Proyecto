@@ -1,0 +1,39 @@
+C:\Users\TOSHIBA\Desktop\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Logica.dll
+C:\Users\TOSHIBA\Desktop\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Logica.pdb
+C:\Users\TOSHIBA\Desktop\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\TOSHIBA\Desktop\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.dll
+C:\Users\TOSHIBA\Desktop\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Logica.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Logica.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Controlador.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Entidad.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\EntityFramework.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Controlador.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Controlador.dll.config
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Entidad.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\EntityFramework.xml
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Logica.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Logica.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Entidad.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\EntityFramework.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Entidad.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\EntityFramework.xml
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\Logica.dll.config
+E:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+E:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+E:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.dll
+E:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\EntityFramework.SqlServer.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\EntityFramework.SqlServer.xml
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\obj\Debug\Logica.csproj.CopyComplete
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\DataModel.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\DataModel.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Logica\bin\Debug\DataModel.dll.config

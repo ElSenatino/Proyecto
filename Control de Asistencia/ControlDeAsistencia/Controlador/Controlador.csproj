@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{186605DD-2FD2-4B83-8786-57A79EDF746B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Controlador</RootNamespace>
+    <AssemblyName>Controlador</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseRepositorio.cs" />
+    <Compile Include="Context\EContext.cs" />
+    <Compile Include="IRepositorio.cs" />
+    <Compile Include="Migrations\201803290458290_actualizacion.cs" />
+    <Compile Include="Migrations\201803290458290_actualizacion.Designer.cs">
+      <DependentUpon>201803290458290_actualizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Modelo\Asistencia\AsistenciaMap.cs" />
+    <Compile Include="Modelo\Asistencia\ControlAsistenciaMap.cs" />
+    <Compile Include="Modelo\Asistencia\JornadaMap.cs" />
+    <Compile Include="Modelo\Asistencia\JustificacionMap.cs" />
+    <Compile Include="Modelo\Asistencia\PermisoMap.cs" />
+    <Compile Include="Modelo\Asistencia\SancionMap.cs" />
+    <Compile Include="Modelo\Asistencia\VacacionMap.cs" />
+    <Compile Include="Modelo\Comun\CargoPersonaMap.cs" />
+    <Compile Include="Modelo\Comun\CargoMap.cs" />
+    <Compile Include="Modelo\Comun\CorreoMap.cs" />
+    <Compile Include="Modelo\Comun\DepartamentoMap.cs" />
+    <Compile Include="Modelo\Comun\DireccionMap.cs" />
+    <Compile Include="Modelo\Comun\PersonaMap.cs" />
+    <Compile Include="Modelo\Comun\TelefonoMap.cs" />
+    <Compile Include="Modelo\Comun\UbigeoMap.cs" />
+    <Compile Include="Modelo\Seguridad\AuditoriaMap.cs" />
+    <Compile Include="Modelo\Seguridad\EntidadMap.cs" />
+    <Compile Include="Modelo\Seguridad\EquipoMap.cs" />
+    <Compile Include="Modelo\Seguridad\ModuloMap.cs" />
+    <Compile Include="Modelo\Seguridad\ReporteMap.cs" />
+    <Compile Include="Modelo\Seguridad\ReporteModuloMap.cs" />
+    <Compile Include="Modelo\Seguridad\RolMap.cs" />
+    <Compile Include="Modelo\Seguridad\RolUsuarioMap.cs" />
+    <Compile Include="Modelo\Seguridad\SesionMap.cs" />
+    <Compile Include="Modelo\Seguridad\UsuarioMap.cs" />
+    <Compile Include="Modelo\Seguridad\UsuarioEquipoMap.cs" />
+    <Compile Include="Modelo\Seguridad\UsuarioModuloMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidad\Entidad.csproj">
+      <Project>{69a81056-ed53-48b9-8ce2-c8b63aca5ec7}</Project>
+      <Name>Entidad</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803290458290_actualizacion.resx">
+      <DependentUpon>201803290458290_actualizacion.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

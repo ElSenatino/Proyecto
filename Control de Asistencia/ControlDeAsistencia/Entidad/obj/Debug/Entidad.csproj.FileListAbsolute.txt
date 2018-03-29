@@ -1,0 +1,23 @@
+C:\Users\TOSHIBA\Desktop\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Debug\Entidad.dll
+C:\Users\TOSHIBA\Desktop\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Debug\Entidad.pdb
+C:\Users\TOSHIBA\Desktop\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
+C:\Users\TOSHIBA\Desktop\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.dll
+C:\Users\TOSHIBA\Desktop\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Debug\Entidad.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Debug\Entidad.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.dll
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.pdb
+F:\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.csprojResolveAssemblyReference.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Debug\Entidad.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Debug\Entidad.pdb
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.csprojResolveAssemblyReference.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.dll
+F:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.pdb
+E:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Debug\Entidad.dll
+E:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\bin\Debug\Entidad.pdb
+E:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.csprojResolveAssemblyReference.cache
+E:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
+E:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.dll
+E:\Nueva carpeta\Control de Asistencia\Control de Asistencia\ControlDeAsistencia\Entidad\obj\Debug\Entidad.pdb

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Entidad.Asistencia" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Entidad.Asistencia" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50897/Comun/CPersona.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:50897/Comun/CPersona.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidad.Comun" />
+  <xs:import schemaLocation="http://localhost:50897/Comun/CPersona.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Entidad.Enumeradores" />
+  <xs:complexType name="ArrayOfEAsistencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EAsistencia" nillable="true" type="tns:EAsistencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEAsistencia" nillable="true" type="tns:ArrayOfEAsistencia" />
+  <xs:complexType name="EAsistencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FinalAlmuerzo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Ingreso" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InicioAlmuerzo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Mes" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Entidad.Comun" minOccurs="0" name="Persona" nillable="true" type="q1:EPersona" />
+      <xs:element minOccurs="0" name="PersonaId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Salida" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EAsistencia" nillable="true" type="tns:EAsistencia" />
+  <xs:complexType name="EJornada">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Ingreso" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Salida" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entidad.Enumeradores" minOccurs="0" name="TipoJornada" type="q2:TipoJornada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EJornada" nillable="true" type="tns:EJornada" />
+  <xs:complexType name="ArrayOfEControlPersonal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EControlPersonal" nillable="true" type="tns:EControlPersonal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEControlPersonal" nillable="true" type="tns:ArrayOfEControlPersonal" />
+  <xs:complexType name="EControlPersonal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Desde" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DiasAsistidos" type="xs:int" />
+      <xs:element minOccurs="0" name="DiasFaltados" type="xs:int" />
+      <xs:element minOccurs="0" name="Hasta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Entidad.Comun" minOccurs="0" name="Persona" nillable="true" type="q3:EPersona" />
+      <xs:element minOccurs="0" name="PersonaId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EControlPersonal" nillable="true" type="tns:EControlPersonal" />
+  <xs:complexType name="ArrayOfEJustificacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EJustificacion" nillable="true" type="tns:EJustificacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEJustificacion" nillable="true" type="tns:ArrayOfEJustificacion" />
+  <xs:complexType name="EJustificacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detalle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Entidad.Comun" minOccurs="0" name="Persona" nillable="true" type="q4:EPersona" />
+      <xs:element minOccurs="0" name="PersonaId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EJustificacion" nillable="true" type="tns:EJustificacion" />
+  <xs:complexType name="ArrayOfEPermiso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EPermiso" nillable="true" type="tns:EPermiso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEPermiso" nillable="true" type="tns:ArrayOfEPermiso" />
+  <xs:complexType name="EPermiso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detalle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Entidad.Comun" minOccurs="0" name="Persona" nillable="true" type="q5:EPersona" />
+      <xs:element minOccurs="0" name="PersonaId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EPermiso" nillable="true" type="tns:EPermiso" />
+  <xs:complexType name="ArrayOfESanciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ESanciones" nillable="true" type="tns:ESanciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfESanciones" nillable="true" type="tns:ArrayOfESanciones" />
+  <xs:complexType name="ESanciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Entidad.Comun" minOccurs="0" name="Persona" nillable="true" type="q6:EPersona" />
+      <xs:element minOccurs="0" name="PersonaId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ESanciones" nillable="true" type="tns:ESanciones" />
+  <xs:complexType name="ArrayOfEVacaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EVacaciones" nillable="true" type="tns:EVacaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEVacaciones" nillable="true" type="tns:ArrayOfEVacaciones" />
+  <xs:complexType name="EVacaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actualizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Final" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Inicio" type="xs:dateTime" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Entidad.Comun" minOccurs="0" name="Persona" nillable="true" type="q7:EPersona" />
+      <xs:element minOccurs="0" name="PersonaId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EVacaciones" nillable="true" type="tns:EVacaciones" />
+</xs:schema>

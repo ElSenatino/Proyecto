@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="26413fb2096d4c9c9e60aa9e0eb65609" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Asistencias" Width="1.5" PointX="3" PointY="41.5" />
+        <EntityTypeShape EntityType="Model.ControlPersonal" Width="1.5" PointX="3" PointY="35.75" />
+        <EntityTypeShape EntityType="Model.Jornadas" Width="1.5" PointX="3.75" PointY="51.625" />
+        <EntityTypeShape EntityType="Model.Justificaciones" Width="1.5" PointX="3" PointY="27.125" />
+        <EntityTypeShape EntityType="Model.Permisos" Width="1.5" PointX="3" PointY="38.75" />
+        <EntityTypeShape EntityType="Model.Sanciones" Width="1.5" PointX="3" PointY="9" />
+        <EntityTypeShape EntityType="Model.Vacaciones" Width="1.5" PointX="3" PointY="29.625" />
+        <EntityTypeShape EntityType="Model.CargoPersonas" Width="1.5" PointX="6" PointY="22.25" />
+        <EntityTypeShape EntityType="Model.Cargos" Width="1.5" PointX="3.75" PointY="54.375" />
+        <EntityTypeShape EntityType="Model.Correos" Width="1.5" PointX="3" PointY="32.75" />
+        <EntityTypeShape EntityType="Model.Departamentos" Width="1.5" PointX="3.75" PointY="48.875" />
+        <EntityTypeShape EntityType="Model.Direcciones" Width="1.5" PointX="3" PointY="21" />
+        <EntityTypeShape EntityType="Model.Personas" Width="1.5" PointX="0.75" PointY="20" />
+        <EntityTypeShape EntityType="Model.Telefonos" Width="1.5" PointX="3" PointY="11.625" />
+        <EntityTypeShape EntityType="Model.Ubigeos" Width="1.5" PointX="0.75" PointY="16.25" />
+        <EntityTypeShape EntityType="Model.Entidades" Width="1.5" PointX="5.25" PointY="8.625" />
+        <EntityTypeShape EntityType="Model.Equipos" Width="1.5" PointX="3" PointY="1.5" />
+        <EntityTypeShape EntityType="Model.Modulos" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="Model.ReporteModulos" Width="1.5" PointX="5.25" PointY="4.5" />
+        <EntityTypeShape EntityType="Model.Reportes" Width="1.5" PointX="3" PointY="57.375" />
+        <EntityTypeShape EntityType="Model.Roles" Width="1.5" PointX="3" PointY="45.625" />
+        <EntityTypeShape EntityType="Model.RolUsuarios" Width="1.5" PointX="5.25" PointY="18.625" />
+        <EntityTypeShape EntityType="Model.Sesiones" Width="1.5" PointX="7.5" PointY="15.5" />
+        <EntityTypeShape EntityType="Model.UsuarioEquipo" Width="1.5" PointX="5.25" PointY="15.5" />
+        <EntityTypeShape EntityType="Model.UsuarioModulos" Width="1.5" PointX="5.25" PointY="12.625" />
+        <EntityTypeShape EntityType="Model.Usuarios" Width="1.5" PointX="3" PointY="14.875" />
+        <AssociationConnector Association="Model.FK_Asistencia_Asistencias_Comun_Personas_PersonaId" />
+        <AssociationConnector Association="Model.FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId" />
+        <AssociationConnector Association="Model.FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId" />
+        <AssociationConnector Association="Model.FK_Asistencia_Justificaciones_Comun_Personas_PersonaId" />
+        <AssociationConnector Association="Model.FK_Asistencia_Permisos_Comun_Personas_PersonaId" />
+        <AssociationConnector Association="Model.FK_Asistencia_Sanciones_Comun_Personas_PersonaId" />
+        <AssociationConnector Association="Model.FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1" />
+        <AssociationConnector Association="Model.FK_Comun_CargoPersonas_Comun_Cargos_CargoId" />
+        <AssociationConnector Association="Model.FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId" />
+        <AssociationConnector Association="Model.FK_Comun_CargoPersonas_Comun_Personas_PersonaId" />
+        <AssociationConnector Association="Model.FK_Comun_Correos_Comun_Personas_PersonaId" />
+        <AssociationConnector Association="Model.FK_Comun_Direcciones_Comun_Personas_PersonaId" />
+        <AssociationConnector Association="Model.FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId" />
+        <AssociationConnector Association="Model.FK_Comun_Telefonos_Comun_Personas_PersonaId" />
+        <AssociationConnector Association="Model.FK_Seguridad_Usuarios_Comun_Personas_PersonaId" />
+        <AssociationConnector Association="Model.FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId" />
+        <AssociationConnector Association="Model.FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId" />
+        <AssociationConnector Association="Model.FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId" />
+        <AssociationConnector Association="Model.FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId" />
+        <AssociationConnector Association="Model.FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId" />
+        <AssociationConnector Association="Model.FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId" />
+        <AssociationConnector Association="Model.FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId" />
+        <AssociationConnector Association="Model.FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId" />
+        <AssociationConnector Association="Model.FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId" />
+        <AssociationConnector Association="Model.FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId" />
+        <EntityTypeShape EntityType="Model.Auditorias" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

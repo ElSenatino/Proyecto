@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Asistencias">
+    <Key>
+      <PropertyRef Name="AsistenciaId" />
+    </Key>
+    <Property Name="AsistenciaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Mes" Type="datetime" Nullable="false" />
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Ingreso" Type="datetime" Nullable="false" />
+    <Property Name="InicioAlmuerzo" Type="datetime" Nullable="false" />
+    <Property Name="FinalAlmuerzo" Type="datetime" Nullable="false" />
+    <Property Name="Salida" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ControlPersonal">
+    <Key>
+      <PropertyRef Name="ControlPersonaId" />
+    </Key>
+    <Property Name="ControlPersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Desde" Type="datetime" Nullable="false" />
+    <Property Name="Hasta" Type="datetime" Nullable="false" />
+    <Property Name="DiasAsistidos" Type="int" Nullable="false" />
+    <Property Name="DiasFaltados" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Jornadas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TipoJornada" Type="int" Nullable="false" />
+    <Property Name="Ingreso" Type="datetime" Nullable="false" />
+    <Property Name="Salida" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Justificaciones">
+    <Key>
+      <PropertyRef Name="JustificacionId" />
+    </Key>
+    <Property Name="JustificacionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="PermisoId" />
+    </Key>
+    <Property Name="PermisoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sanciones">
+    <Key>
+      <PropertyRef Name="SancionId" />
+    </Key>
+    <Property Name="SancionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vacaciones">
+    <Key>
+      <PropertyRef Name="PersonaId" />
+    </Key>
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonaId1" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Inicio" Type="datetime" Nullable="false" />
+    <Property Name="Final" Type="datetime" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CargoPersonas">
+    <Key>
+      <PropertyRef Name="CargoPersonaId" />
+    </Key>
+    <Property Name="CargoPersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CargoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DepartamentoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JornadaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cargos">
+    <Key>
+      <PropertyRef Name="CargoId" />
+    </Key>
+    <Property Name="CargoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Correos">
+    <Key>
+      <PropertyRef Name="CorreoId" />
+    </Key>
+    <Property Name="CorreoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CorreoElectronico" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departamentos">
+    <Key>
+      <PropertyRef Name="DepartamentoId" />
+    </Key>
+    <Property Name="DepartamentoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Direcciones">
+    <Key>
+      <PropertyRef Name="DireccionId" />
+    </Key>
+    <Property Name="DireccionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TipoDireccion" Type="int" Nullable="false" />
+    <Property Name="NombreVia" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Numero" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Urbanizacion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Referencia" Type="varchar" MaxLength="100" />
+    <Property Name="UbigeoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personas">
+    <Key>
+      <PropertyRef Name="PersonaId" />
+    </Key>
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NombreGenerado" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TipoDocumento" Type="int" Nullable="false" />
+    <Property Name="NroDocumento" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="TipoSexo" Type="int" Nullable="false" />
+    <Property Name="Nacimiento" Type="datetime" Nullable="false" />
+    <Property Name="Imagen" Type="image" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Telefonos">
+    <Key>
+      <PropertyRef Name="TelefonoId" />
+    </Key>
+    <Property Name="TelefonoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TipoTelefono" Type="int" Nullable="false" />
+    <Property Name="NroTelefono" Type="int" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="100" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ubigeos">
+    <Key>
+      <PropertyRef Name="UbigeoId" />
+    </Key>
+    <Property Name="UbigeoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Pais" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Departamento" Type="nvarchar(max)" />
+    <Property Name="Provincia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Distrito" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Auditorias">
+    <Key>
+      <PropertyRef Name="AuditoriaId" />
+    </Key>
+    <Property Name="AuditoriaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SesionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Registro" Type="datetime" Nullable="false" />
+    <Property Name="Metodo" Type="varchar" MaxLength="25" />
+    <Property Name="CodigoRegistro" Type="varchar" MaxLength="25" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Entidades">
+    <Key>
+      <PropertyRef Name="EntidadId" />
+    </Key>
+    <Property Name="EntidadId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NombreMostrado" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NombreMostradoPlural" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ModuloId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Equipos">
+    <Key>
+      <PropertyRef Name="EquipoId" />
+    </Key>
+    <Property Name="EquipoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DireccionIP" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NumeroIP" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="ModuloId" />
+    </Key>
+    <Property Name="ModuloId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReporteModulos">
+    <Key>
+      <PropertyRef Name="ReporteModuloId" />
+    </Key>
+    <Property Name="ReporteModuloId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" />
+    <Property Name="ReporteId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModuloId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reportes">
+    <Key>
+      <PropertyRef Name="ReporteId" />
+    </Key>
+    <Property Name="ReporteId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ReportServer" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ruta" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolUsuarios">
+    <Key>
+      <PropertyRef Name="RolUsuarioId" />
+    </Key>
+    <Property Name="RolUsuarioId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UsuarioId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RolId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sesiones">
+    <Key>
+      <PropertyRef Name="SesionId" />
+    </Key>
+    <Property Name="SesionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UsuarioEquipoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Inicio" Type="datetime" Nullable="false" />
+    <Property Name="Final" Type="datetime" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="TipoEntrada" Type="int" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioEquipo">
+    <Key>
+      <PropertyRef Name="UsuarioEquipo" />
+    </Key>
+    <Property Name="UsuarioEquipo" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UsuarioId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EquipoId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioModulos">
+    <Key>
+      <PropertyRef Name="UsuarioModuloId" />
+    </Key>
+    <Property Name="UsuarioModuloId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UsuarioId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModuloId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonaId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CambiaContraseña" Type="bit" Nullable="false" />
+    <Property Name="UltimaOperacion" Type="datetime" Nullable="false" />
+    <Property Name="EnLinea" Type="bit" Nullable="false" />
+    <Property Name="Administracion" Type="bit" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Actualizacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Asistencia_Asistencias_Comun_Personas_PersonaId">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Asistencias" Type="Self.Asistencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="Asistencias">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ControlPersonal" Type="Self.ControlPersonal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="ControlPersonal">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asistencia_Justificaciones_Comun_Personas_PersonaId">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Justificaciones" Type="Self.Justificaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="Justificaciones">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asistencia_Permisos_Comun_Personas_PersonaId">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="Permisos">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asistencia_Sanciones_Comun_Personas_PersonaId">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sanciones" Type="Self.Sanciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="Sanciones">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Vacaciones" Type="Self.Vacaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="Vacaciones">
+        <PropertyRef Name="PersonaId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId">
+    <End Role="Jornadas" Type="Self.Jornadas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CargoPersonas" Type="Self.CargoPersonas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jornadas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CargoPersonas">
+        <PropertyRef Name="JornadaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comun_CargoPersonas_Comun_Cargos_CargoId">
+    <End Role="Cargos" Type="Self.Cargos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CargoPersonas" Type="Self.CargoPersonas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargos">
+        <PropertyRef Name="CargoId" />
+      </Principal>
+      <Dependent Role="CargoPersonas">
+        <PropertyRef Name="CargoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId">
+    <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CargoPersonas" Type="Self.CargoPersonas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="DepartamentoId" />
+      </Principal>
+      <Dependent Role="CargoPersonas">
+        <PropertyRef Name="DepartamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comun_CargoPersonas_Comun_Personas_PersonaId">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CargoPersonas" Type="Self.CargoPersonas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="CargoPersonas">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comun_Correos_Comun_Personas_PersonaId">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Correos" Type="Self.Correos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="Correos">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comun_Direcciones_Comun_Personas_PersonaId">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="Direcciones">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId">
+    <End Role="Ubigeos" Type="Self.Ubigeos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ubigeos">
+        <PropertyRef Name="UbigeoId" />
+      </Principal>
+      <Dependent Role="Direcciones">
+        <PropertyRef Name="UbigeoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comun_Telefonos_Comun_Personas_PersonaId">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Telefonos" Type="Self.Telefonos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="Telefonos">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId">
+    <End Role="Modulos" Type="Self.Modulos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Entidades" Type="Self.Entidades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="ModuloId" />
+      </Principal>
+      <Dependent Role="Entidades">
+        <PropertyRef Name="ModuloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId">
+    <End Role="Modulos" Type="Self.Modulos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReporteModulos" Type="Self.ReporteModulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="ModuloId" />
+      </Principal>
+      <Dependent Role="ReporteModulos">
+        <PropertyRef Name="ModuloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId">
+    <End Role="Reportes" Type="Self.Reportes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReporteModulos" Type="Self.ReporteModulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reportes">
+        <PropertyRef Name="ReporteId" />
+      </Principal>
+      <Dependent Role="ReporteModulos">
+        <PropertyRef Name="ReporteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RolUsuarios" Type="Self.RolUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="RolUsuarios">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RolUsuarios" Type="Self.RolUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="RolUsuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId">
+    <End Role="UsuarioEquipo" Type="Self.UsuarioEquipo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sesiones" Type="Self.Sesiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioEquipo">
+        <PropertyRef Name="UsuarioEquipo" />
+      </Principal>
+      <Dependent Role="Sesiones">
+        <PropertyRef Name="UsuarioEquipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId">
+    <End Role="Equipos" Type="Self.Equipos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UsuarioEquipo" Type="Self.UsuarioEquipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipos">
+        <PropertyRef Name="EquipoId" />
+      </Principal>
+      <Dependent Role="UsuarioEquipo">
+        <PropertyRef Name="EquipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UsuarioEquipo" Type="Self.UsuarioEquipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="UsuarioEquipo">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId">
+    <End Role="Modulos" Type="Self.Modulos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UsuarioModulos" Type="Self.UsuarioModulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="ModuloId" />
+      </Principal>
+      <Dependent Role="UsuarioModulos">
+        <PropertyRef Name="ModuloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UsuarioModulos" Type="Self.UsuarioModulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="UsuarioModulos">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguridad_Usuarios_Comun_Personas_PersonaId">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="PersonaId" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Asistencias" EntityType="Self.Asistencias" Schema="Asistencia" store:Type="Tables" />
+    <EntitySet Name="ControlPersonal" EntityType="Self.ControlPersonal" Schema="Asistencia" store:Type="Tables" />
+    <EntitySet Name="Jornadas" EntityType="Self.Jornadas" Schema="Asistencia" store:Type="Tables" />
+    <EntitySet Name="Justificaciones" EntityType="Self.Justificaciones" Schema="Asistencia" store:Type="Tables" />
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="Asistencia" store:Type="Tables" />
+    <EntitySet Name="Sanciones" EntityType="Self.Sanciones" Schema="Asistencia" store:Type="Tables" />
+    <EntitySet Name="Vacaciones" EntityType="Self.Vacaciones" Schema="Asistencia" store:Type="Tables" />
+    <EntitySet Name="CargoPersonas" EntityType="Self.CargoPersonas" Schema="Comun" store:Type="Tables" />
+    <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="Comun" store:Type="Tables" />
+    <EntitySet Name="Correos" EntityType="Self.Correos" Schema="Comun" store:Type="Tables" />
+    <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="Comun" store:Type="Tables" />
+    <EntitySet Name="Direcciones" EntityType="Self.Direcciones" Schema="Comun" store:Type="Tables" />
+    <EntitySet Name="Personas" EntityType="Self.Personas" Schema="Comun" store:Type="Tables" />
+    <EntitySet Name="Telefonos" EntityType="Self.Telefonos" Schema="Comun" store:Type="Tables" />
+    <EntitySet Name="Ubigeos" EntityType="Self.Ubigeos" Schema="Comun" store:Type="Tables" />
+    <EntitySet Name="Auditorias" EntityType="Self.Auditorias" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="Entidades" EntityType="Self.Entidades" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="Equipos" EntityType="Self.Equipos" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="Modulos" EntityType="Self.Modulos" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="ReporteModulos" EntityType="Self.ReporteModulos" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="Reportes" EntityType="Self.Reportes" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="RolUsuarios" EntityType="Self.RolUsuarios" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="Sesiones" EntityType="Self.Sesiones" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="UsuarioEquipo" EntityType="Self.UsuarioEquipo" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="UsuarioModulos" EntityType="Self.UsuarioModulos" Schema="Seguridad" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="Seguridad" store:Type="Tables" />
+    <AssociationSet Name="FK_Asistencia_Asistencias_Comun_Personas_PersonaId" Association="Self.FK_Asistencia_Asistencias_Comun_Personas_PersonaId">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Asistencias" EntitySet="Asistencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId" Association="Self.FK_Asistencia_ControlPersonal_Comun_Personas_PersonaId">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="ControlPersonal" EntitySet="ControlPersonal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asistencia_Justificaciones_Comun_Personas_PersonaId" Association="Self.FK_Asistencia_Justificaciones_Comun_Personas_PersonaId">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Justificaciones" EntitySet="Justificaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asistencia_Permisos_Comun_Personas_PersonaId" Association="Self.FK_Asistencia_Permisos_Comun_Personas_PersonaId">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Permisos" EntitySet="Permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asistencia_Sanciones_Comun_Personas_PersonaId" Association="Self.FK_Asistencia_Sanciones_Comun_Personas_PersonaId">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Sanciones" EntitySet="Sanciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1" Association="Self.FK_Asistencia_Vacaciones_Comun_Personas_PersonaId1">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Vacaciones" EntitySet="Vacaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId" Association="Self.FK_Comun_CargoPersonas_Asistencia_Jornadas_JornadaId">
+      <End Role="Jornadas" EntitySet="Jornadas" />
+      <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comun_CargoPersonas_Comun_Cargos_CargoId" Association="Self.FK_Comun_CargoPersonas_Comun_Cargos_CargoId">
+      <End Role="Cargos" EntitySet="Cargos" />
+      <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId" Association="Self.FK_Comun_CargoPersonas_Comun_Departamentos_DepartamentoId">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comun_CargoPersonas_Comun_Personas_PersonaId" Association="Self.FK_Comun_CargoPersonas_Comun_Personas_PersonaId">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="CargoPersonas" EntitySet="CargoPersonas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comun_Correos_Comun_Personas_PersonaId" Association="Self.FK_Comun_Correos_Comun_Personas_PersonaId">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Correos" EntitySet="Correos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comun_Direcciones_Comun_Personas_PersonaId" Association="Self.FK_Comun_Direcciones_Comun_Personas_PersonaId">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Direcciones" EntitySet="Direcciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId" Association="Self.FK_Comun_Direcciones_Comun_Ubigeos_UbigeoId">
+      <End Role="Ubigeos" EntitySet="Ubigeos" />
+      <End Role="Direcciones" EntitySet="Direcciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comun_Telefonos_Comun_Personas_PersonaId" Association="Self.FK_Comun_Telefonos_Comun_Personas_PersonaId">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Telefonos" EntitySet="Telefonos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId" Association="Self.FK_Seguridad_Entidades_Seguridad_Modulos_ModuloId">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="Entidades" EntitySet="Entidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId" Association="Self.FK_Seguridad_ReporteModulos_Seguridad_Modulos_ModuloId">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="ReporteModulos" EntitySet="ReporteModulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId" Association="Self.FK_Seguridad_ReporteModulos_Seguridad_Reportes_ReporteId">
+      <End Role="Reportes" EntitySet="Reportes" />
+      <End Role="ReporteModulos" EntitySet="ReporteModulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId" Association="Self.FK_Seguridad_RolUsuarios_Seguridad_Roles_RolId">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RolUsuarios" EntitySet="RolUsuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId" Association="Self.FK_Seguridad_RolUsuarios_Seguridad_Usuarios_UsuarioId">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="RolUsuarios" EntitySet="RolUsuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId" Association="Self.FK_Seguridad_Sesiones_Seguridad_UsuarioEquipo_UsuarioEquipoId">
+      <End Role="UsuarioEquipo" EntitySet="UsuarioEquipo" />
+      <End Role="Sesiones" EntitySet="Sesiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId" Association="Self.FK_Seguridad_UsuarioEquipo_Seguridad_Equipos_EquipoId">
+      <End Role="Equipos" EntitySet="Equipos" />
+      <End Role="UsuarioEquipo" EntitySet="UsuarioEquipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId" Association="Self.FK_Seguridad_UsuarioEquipo_Seguridad_Usuarios_UsuarioId">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="UsuarioEquipo" EntitySet="UsuarioEquipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId" Association="Self.FK_Seguridad_UsuarioModulos_Seguridad_Modulos_ModuloId">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="UsuarioModulos" EntitySet="UsuarioModulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId" Association="Self.FK_Seguridad_UsuarioModulos_Seguridad_Usuarios_UsuarioId">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="UsuarioModulos" EntitySet="UsuarioModulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguridad_Usuarios_Comun_Personas_PersonaId" Association="Self.FK_Seguridad_Usuarios_Comun_Personas_PersonaId">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
